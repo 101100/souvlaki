@@ -276,7 +276,7 @@ impl PlayerInterface {
     }
 
     #[zbus(property)]
-    fn metadata(&self) -> HashMap<&str, Value> {
+    fn metadata(&self) -> HashMap<&str, Value<'_>> {
         // TODO: this should be stored in a cache inside the state.
         let mut dict = HashMap::<&str, Value>::new();
 
